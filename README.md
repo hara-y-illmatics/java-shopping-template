@@ -52,7 +52,7 @@ git config --global user.email "yamada-t@company.co.jp"
 ```
 ### Oracle 
 データベース管理システム
- * [18.3XEダウンロード](https://www.oracle.com/technetwork/jp/database/database-technologies/express-edition/downloads/xe-prior-releases-5172097-ja.html)
+ * [18.4.0XEダウンロード](https://www.oracle.com/jp/database/technologies/xe18c-downloads.html)
 <!--
 ### DB作成〜起動
 
@@ -116,12 +116,12 @@ Githubでmasterへのマージをレビュー必須とする[設定](https://dri
 `.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
 ## 4. ダウンロード済みのOracle XE の移動
 ```bash
-cd docker/oracle/18.3.0/
+cd docker/oracle/18.4.0/
 cp ~/Downloads/LINUX.X64_180000_db_home.zip ./
 ```
 ## 5. dockerイメージのビルド
 ```bash
-../buildDockerImage.sh -v 18.3.0 -x
+../buildDockerImage.sh -v 18.4.0 -x
 ```
 ## 6. Dockerコンテナ(DB)の起動
 ```bash
