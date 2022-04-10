@@ -102,7 +102,7 @@ localhost:8080/query
 研修アプリを取得した後、自分の作業用リポジトリへプッシュを行う。
 ```bash
 # 研修用リポジトリをローカルにshoppingというディレクトリ名でクローン
-git clone https://github.com/takamoto-s/java-shopping-template shopping
+git clone https://github.com/hara-y-illmatics/java-shopping-template shopping
 # shoppingへ移動
 cd shopping
 # originの再設定
@@ -151,7 +151,7 @@ Flywayで行うため、不要
 ./up.sh
 ```
 ## 10. 動作確認
-[http://localhost](http://localhost:8080) にアクセスして画面が表示されれば完了。
+[http://localhost:8080](http://localhost:8080) にアクセスして画面が表示されれば完了。
 
 # 研修アプリケーションについての説明
 <!--
@@ -184,10 +184,12 @@ Flywayで行うため、不要
   * ログイン
   * ログアウト
 認証用テストユーザ
-||ユーザ名|パスワード|
-|---|---|---|
+
+| |ユーザ名|パスワード|
+|------|------|------|
 |フロントサイド|user@a.com|pass|
 |管理サイド|admin@a.com|pass|
+
 上記の実装済み機能以外について [設計書](https://drive.google.com/drive/folders/1VRGeN6YdkE5EmyPEBiIkk0y2TneF3RH2?usp=sharing) を参考に実装を行う。
 管理サイドから実装するのがおすすめ。
 ブランチモデルは [GitHub Flow](https://tracpath.com/bootcamp/learning_git_github_flow.html) を利用する。
@@ -195,7 +197,7 @@ Flywayで行うため、不要
 PullRequestは機能単位(商品管理、商品カテゴリ管理...)とする。
 masterへのマージはGitHubでPullRequestを利用し、有識者のコードレビュー承認後にマージすること。
 # リファレンスなど
-[Spring](hhttps://spring.pleiades.io)
+[Spring](https://spring.pleiades.io)
 [Java](https://kazurof.github.io/GoogleJavaStyle-ja/)
 [Bootstrap4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 [FontAwesome](https://fontawesome.com/)

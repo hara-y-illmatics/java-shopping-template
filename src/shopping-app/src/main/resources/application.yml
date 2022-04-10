@@ -4,8 +4,8 @@ spring:
 # ===============================
 # Set here configurations for the database connection
   datasource:
-    url: jdbc:oracle:thin:@//dbserver:1521/XE
-    username: testuser
+    url: jdbc:oracle:thin:@//dbserver:1521/TEST
+    username: tuser
     password: DB_USER_PASSWORD
     driverClassName: oracle.jdbc.driver.OracleDriver
     testWhileIdle: true
@@ -22,7 +22,7 @@ spring:
       naming:
         implicitStrategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
         physicalStrategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-# Allows Hibernate to generate SQL optimized for a particular DBMS
+# Allows Hibernate to generate SQL optimized for a particular DBMS 
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.Oracle10gDialect
+        dialect: org.hibernate.dialect.Oracle12gDialect
