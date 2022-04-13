@@ -105,6 +105,12 @@ localhost:8080/query
 git clone https://github.com/hara-y-illmatics/java-shopping-template shopping
 # shoppingへ移動
 cd shopping
+## 以後、このshoppingディレクトリは(project root)と表記します。
+## 実際のパスと読み替えてコマンド実行してください。
+# shoppingディレクトリのフルパス表示
+## 表示されたパス = (project root)
+## です。
+pwd
 # originの再設定
 # <URL> は作成した自分のリポジトリの "HTTPS" を使用する
 git remote set-url origin <URL>
@@ -116,12 +122,12 @@ Githubでmasterへのマージをレビュー必須とする[設定](https://dri
 `.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
 ## 4. ダウンロード済みのOracle XE の移動
 ```bash
-cd docker/oracle/18.4.0/
-cp ~/Downloads/LINUX.X64_180000_db_home.zip ./
+cd docker/oracle
+cp ~/Downloads/oracle-database-xe-18c-1.0-1.x86_64.rpm ./
 ```
 ## 5. dockerイメージのビルド
 ```bash
-../buildDockerImage.sh -v 18.4.0 -x
+./buildDockerImage.sh -v 18.4.0 -x
 ```
 ## 6. Dockerコンテナ(DB)の起動
 ```bash
