@@ -52,7 +52,7 @@ git config --global user.email "yamada-t@company.co.jp"
 ```
 ### Oracle 
 データベース管理システム
- * [18.4.0XEダウンロード](https://www.oracle.com/jp/database/technologies/xe18c-downloads.html)
+ * [18.4.0 XEダウンロード](https://www.oracle.com/jp/database/technologies/xe18c-downloads.html)
 <!--
 ### DB作成〜起動
 
@@ -122,16 +122,19 @@ Githubでmasterへのマージをレビュー必須とする[設定](https://dri
 `.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
 ## 4. ダウンロード済みのOracle XE の移動
 ```bash
-cd docker/oracle
+cd (project root)/docker/oracle
 cp ~/Downloads/oracle-database-xe-18c-1.0-1.x86_64.rpm ./
 ```
 ## 5. dockerイメージのビルド
 ```bash
+# 既に(project root)/docker/oracleにcd(移動)済みなら実施不要
+cd (project root)/docker/oracle
+# (project root)/docker/oracleにcd(移動)してから以下実施
 ./buildDockerImage.sh -v 18.4.0 -x
 ```
 ## 6. Dockerコンテナ(DB)の起動
 ```bash
-cd bin
+cd (project root)/bin
 ./up-d.sh
 ```
 ## 7. Oracleのセットアップ
@@ -152,6 +155,9 @@ Flywayで行うため、不要
 ## 9. Dockerコンテナ(アプリ)の起動
 ```bash
 # アプリのビルド
+# 既に(project root)/binに移動済みなら実施不要
+cd (project root)/bin
+# 
 ./clean-build.sh
 # コンテナの起動
 ./up.sh
