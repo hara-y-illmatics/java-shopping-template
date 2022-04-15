@@ -15,9 +15,7 @@ INSERT INTO users (
  email,
  email_verified_at,
  password,
- image_path,
- create_at  DEFAULT CURRENT_TIMESTAMP,
- update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+ image_path
 ) VALUES (
  'user@a.com',
  'user@a.com',
