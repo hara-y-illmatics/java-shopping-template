@@ -34,6 +34,7 @@ Spring専用の統合開発環境
 ダウンロードしたdmgファイルを実行し、中にあるSTS.appをこのApplicationsにコピーしてください。
   * [日本語化プラグインダウンロード](https://mergedoc.osdn.jp)
 setup.appを実行し、STS.appを選択
+  * アプリケーション作成時は(このディレクトリ)/src/shopping-app をインポートして編集すること
 
 ### Docker
 Dockerは非常に軽量なコンテナ型のアプリケーション実行環境  
