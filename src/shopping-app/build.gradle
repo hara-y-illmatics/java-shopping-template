@@ -35,7 +35,5 @@ dependencies {
   compile('org.springframework.boot:spring-boot-starter-web')
   compile('org.springframework.boot:spring-boot-starter-data-jpa')
   compile files('lib/ojdbc11.jar')
-  //testCompile('com.h2database:h2')
-  // compile ('com.oracle.jdbc:ojdbc6:11.2.0.4')
   testCompile('org.springframework.boot:spring-boot-starter-test')
 }

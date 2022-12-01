@@ -44,21 +44,15 @@ chocolatey 1.1.0
 The install of chocolateygui was successful.
 ```
 
-### JDK
+### JDK(Java Development Kit)
 Javaの開発・動作に必要な開発キット
 #### インストール手順
 デスクトップからスタートボタンをクリックし、Chocolatey GUIを起動する。
 左のメニューからchocolateyをクリックして画面を切り替える。
 次のとおりに操作して検索する。
 
-* Match Word Exactlyにチェックを付ける。
-* Searchにopenjdkを入力し、Enterキーを押下する。
-
-検索結果にopenjdkの最新版が表示される。
-
-cf. 2022/09/30時点でバージョン19.0.0である。
-
-検索結果のopenjdkをダブルクリックして、画面右下のinstallボタンをクリックする。
+* SearchにJava SEと入力し、Enterキーを押下する。
+* 検索結果にjavaの各バージョンが表示される。その中からJava SE 8.0.211ををダブルクリックして、画面右下のinstallボタンをクリックする。
 インストールが完了すると、
 ```C:\Program Files```
 フォルダ配下にOpenJDKフォルダが作成されていて、
@@ -66,7 +60,7 @@ Chocolatey GUIからOpenJDKがインストールされている。
 
 インストール確認のため、新しくPowerShellを管理者権限で起動し、
 ```java -version```
-と入力、Enterキー押下する。OpenJDK 19.0.0をインストールした場合、
+と入力、Enterキー押下する。OpenJDK 19.0.1をインストールした場合、
 以下のように標準出力に表示される。
 ```ps
 openjdk version "19" 2022-09-20
