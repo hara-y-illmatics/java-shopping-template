@@ -119,6 +119,12 @@ git config --global user.email "yamada-t@company.co.jp"
  * Oracle Database 21c Express Edition for Linux x64 ( OL7 )をダウンロードする。
 
 
+### Oracle Java Database Connectivity(OJDBC)
+OracleにJavaのプログラムで接続するためのライブラリ
+[Oracle JDBCダウンロードサイト](https://www.oracle.com/jp/database/technologies/appdev/jdbc-downloads.html)から
+Zipped JDBC driver (ojdbc11.jar) and Companion Jarsをダウンロード
+
+
 ## 2. 研修アプリの取得と作業用リポジトリへプッシュ
 研修アプリを取得した後、自分の作業用リポジトリへプッシュを行う。
 ```bash
@@ -137,9 +143,13 @@ git push origin master
 ## 3. masterブランチのプロテクションルール設定
 Githubでmasterへのマージをレビュー必須とする[設定](https://drive.google.com/drive/folders/1jwtMsaLBwvPpkmjvfqIdrkwqHWQXjq7k?usp=sharing)を行う。
 `.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
-## 4. ダウンロード済みのOracle XE の移動
+
+## 4. ダウンロード済みのOracle XE及びojdbc11.jarの移動
 Oracle XEのインストーラー(拡張子rpmのファイル)を `C:\Users\(ユーザー名)\Downloads` フォルダにダウンロードした場合
 ```
+cd C:\Users\(ユーザー名)\Downloads
+tar -xvf ojdbc11-full.tar.gz
+mv .\ojdbc11-full\ojdbc11.jar E:\git\shopping\src\shopping-app\lib\
 mv C:\Users\(ユーザー名)\Downloads\oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm c:\git\shopping\docker\oracle\21.3.0\
 ```
 
@@ -148,14 +158,41 @@ mv C:\Users\(ユーザー名)\Downloads\oracle-database-xe-21c-1.0-1.ol7.x86_64.
 cd c:\git\shopping\docker\oracle
 .\buildContainerImage.sh -v 21.3.0 -x -i
 (別のコマンドプロンプトが開きビルドを実行、所要時間はPCの性能に依るが数分程度後、ビルド完了後に別プロンプトが閉じる)
-docker images
 ```
 
-コマンドの実行結果で以下のように表示されていれば正常にビルドできている。
+## 6. Dockerコンテナ(DB)の起動
+```bash
+cd bin
+./up-d.sh
 ```
-REPOSITORY        TAG         IMAGE ID       CREATED          SIZE
-oracle/database   21.3.0-xe   fe3040d18249   13 minutes ago   6.53GB
+
+## 7. Oracleのセットアップ
+```bash
+docker exec -it docker exec -it docker-dbserver-1 bash
+sqlplus / as sysdba
+alter session set container=PDB$SEED;
+create pluggable database test admin user tuser identified by tpassword file_name_convert = ('/opt/oracle/oradata/XE/pdbseed/', '/opt/oracle/oradata/XE/test/');
+show pdbs
+alter pluggable database TEST open;
+exit
 ```
-(IMAGE IDやCREATEDは異なる場合があります。)
+
+## 8.DB初期データの投入
+TBD
+
+## 9. Dockerコンテナ(アプリ)の起動
+### アプリのビルド
+```bash
+./clean-build.sh
+(実行完了に数分ほどかかる場合がある。)
+```
+
+### コンテナの起動
+```bash
+./up.sh
+```
+
+## 10. 動作確認
+[http://localhost:8080](http://localhost:8080) にアクセスして画面が表示されれば完了。
 
 WIP
