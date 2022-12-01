@@ -55,23 +55,23 @@ Javaの開発・動作に必要な開発キット
 * 検索結果にjavaの各バージョンが表示される。その中からJava SE 8.0.211ををダブルクリックして、画面右下のinstallボタンをクリックする。
 インストールが完了すると、
 ```C:\Program Files```
-フォルダ配下にOpenJDKフォルダが作成されていて、
-Chocolatey GUIからOpenJDKがインストールされている。
+フォルダ配下にJavaフォルダが作成されていて、
+Chocolatey GUIからjdk 1.8.0_211がインストールされている。
 
 インストール確認のため、新しくPowerShellを管理者権限で起動し、
 ```java -version```
-と入力、Enterキー押下する。OpenJDK 19.0.1をインストールした場合、
+と入力、Enterキー押下する。jdk 1.8.0_211をインストールした場合、
 以下のように標準出力に表示される。
 ```ps
-openjdk version "19" 2022-09-20
-OpenJDK Runtime Environment (build 19+36-2238)
-OpenJDK 64-Bit Server VM (build 19+36-2238, mixed mode, sharing)
+java version "1.8.0_211"
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)
 ```
 
 <!--
 メンター用備忘録
-Chocolatey GUI経由でOpenJDKをインストールした場合、
-環境変数JAVA_HOMEの追加及びpathへの追記も併せて実施される
+Chocolatey GUI経由でJDK各種をインストールした場合、
+環境変数JAVA_HOMEの追加及びpathへの追記も併せて実施される。
 -->
 
 ### Pleiades All in One Eclipse
@@ -113,12 +113,6 @@ git config --global user.email "yamada-t@company.co.jp"
  * Oracle Database 21c Express Edition for Linux x64 ( OL7 )をダウンロードする。
 
 
-### Oracle Java Database Connectivity(OJDBC)
-OracleにJavaのプログラムで接続するためのライブラリ
-[Oracle JDBCダウンロードサイト](https://www.oracle.com/jp/database/technologies/appdev/jdbc-downloads.html)から
-Zipped JDBC driver (ojdbc11.jar) and Companion Jarsをダウンロード
-
-
 ## 2. 研修アプリの取得と作業用リポジトリへプッシュ
 研修アプリを取得した後、自分の作業用リポジトリへプッシュを行う。
 ```bash
@@ -135,18 +129,17 @@ git push origin master
 git config --global --add safe.directory c:/git/shopping
 ```
 
+
 ## 3. masterブランチのプロテクションルール設定
 Githubでmasterへのマージをレビュー必須とする[設定](https://drive.google.com/drive/folders/1jwtMsaLBwvPpkmjvfqIdrkwqHWQXjq7k?usp=sharing)を行う。
 `.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
 
-## 4. ダウンロード済みのOracle XE及びojdbc11.jarの移動
+## 4. ダウンロード済みのOracle XEの移動
 Oracle XEのインストーラー(拡張子rpmのファイル)を `C:\Users\(ユーザー名)\Downloads` フォルダにダウンロードした場合
 ```
-cd C:\Users\(ユーザー名)\Downloads
-tar -xvf ojdbc11-full.tar.gz
-mv .\ojdbc11-full\ojdbc11.jar E:\git\shopping\src\shopping-app\lib\
 mv C:\Users\(ユーザー名)\Downloads\oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm c:\git\shopping\docker\oracle\21.3.0\
 ```
+
 
 ## 5. dockerイメージのビルド
 ```
@@ -155,11 +148,13 @@ cd c:\git\shopping\docker\oracle
 (別のコマンドプロンプトが開きビルドを実行、所要時間はPCの性能に依るが数分程度後、ビルド完了後に別プロンプトが閉じる)
 ```
 
+
 ## 6. Dockerコンテナ(DB)の起動
 ```bash
 cd bin
 ./up-d.sh
 ```
+
 
 ## 7. Oracleのセットアップ
 ```bash
