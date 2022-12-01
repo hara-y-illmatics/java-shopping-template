@@ -1,4 +1,6 @@
 # セットアップ(Windows端末用)
+以下、管理者権限ユーザーで実施する。
+
 ## 1.開発環境構築
 ### Chocolatey
 パッケージ管理アプリ
@@ -54,7 +56,7 @@ Javaの開発・動作に必要な開発キット
 
 検索結果にopenjdkの最新版が表示される。
 
-cf. 2022/9/30時点でバージョン19.0.0である。
+cf. 2022/09/30時点でバージョン19.0.0である。
 
 検索結果のopenjdkをダブルクリックして、画面右下のinstallボタンをクリックする。
 インストールが完了すると、
@@ -71,6 +73,7 @@ openjdk version "19" 2022-09-20
 OpenJDK Runtime Environment (build 19+36-2238)
 OpenJDK 64-Bit Server VM (build 19+36-2238, mixed mode, sharing)
 ```
+
 <!--
 メンター用備忘録
 Chocolatey GUI経由でOpenJDKをインストールした場合、
@@ -88,14 +91,17 @@ Windows x64 Full Edition Javaの場合、LombokやSTSプラグインも導入さ
 -->
 
 ### Docker
-非常に軽量なコンテナ型のアプリケーション実行環境
-[Docker公式サイト](https://www.docker.com/products/docker-desktop/)から
-Also available for Windowsのリンクからインストーラをダウンロードする。
+非常に軽量なコンテナ型のアプリケーション実行環境  
+* [Docker Desktop ダウンロードサイト](https://www.docker.com/products/docker-desktop/)
+* Download Docker Desktop Windowsのボタンをクリックしてダウンロードする。
+
+* 起動時にエラーが発生する場合、下記のサイトの通りにコマンド実行など実施する。
+[セットアップ手順記載先](https://learn.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
 
 ### Github
 ソースコード管理等のWebサービス
 [github.com](https://github.com/)
-* アカウントを持っていなければ場合は登録する。(例としてアカウントをyamada-t、メールアドレスをyamada-t@company.co.jpとする。)
+* アカウントを持っていなければ場合は登録する。(以下、例としてアカウントをyamada-t、メールアドレスをyamada-t@company.co.jpとする。)
 * 新規リポジトリを作成する。
 * 作成したリポジトリの `Settings` > `Manage access` `Invite a collaborator` から研修担当者のGithubアカウントを追加する。
 * Slack研修用チャンネルに作成したリポジトリの通知がくるように連携を行う。
@@ -105,19 +111,10 @@ Also available for Windowsのリンクからインストーラをダウンロー
 ```base
 git config --global user.name "yamada-t"
 git config --global user.email "yamada-t@company.co.jp"
-```
+
 ### Oracle 
 データベース管理システム
  * [Oracle Database 21cダウンロードサイト](https://www.oracle.com/jp/database/technologies/xe-downloads.html)
  * Oracle Database 21c Express Edition for Linux x64 ( OL7 )をダウンロードする。
-
-### Docker
-非常に軽量なコンテナ型のアプリケーション実行環境  
-* [Docker Desktop ダウンロードサイト](https://www.docker.com/products/docker-desktop/)
-* Download Docker Desktop Windowsのボタンをクリックしてダウンロードする。
-
-* 起動時にエラーが発生する場合、下記のサイトの通りにコマンド実行など実施する。
-https://learn.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
-
 
 WIP
