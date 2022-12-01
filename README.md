@@ -185,4 +185,45 @@ TBD
 ## 10. 動作確認
 [http://localhost:8080](http://localhost:8080) にアクセスして画面が表示されれば完了。
 
-WIP
+## サービス起動/停止＋
+```bash
+# ビルド
+~/bin/clean-build.sh
+# 起動
+~/bin/up.sh
+# 停止(未作成)
+Docker Desktopから停止する
+# DBアクセス
+~/bin/sqlplus.sh
+```
+# 課題
+* フロントサイド
+  * 認証
+    * ログイン
+    * ログアウト
+    * パスワードリセット
+    * 新規登録(イメージ以外)
+* 管理サイド
+  * ログイン
+  * ログアウト
+
+認証用テストユーザ
+|用いる画面|ユーザ名|パスワード|
+|---|---|---|
+|フロントサイド|user@a.com|pass|
+|管理サイド|admin@a.com|pass|
+
+上記の実装済み機能以外について [設計書](https://drive.google.com/drive/folders/1VRGeN6YdkE5EmyPEBiIkk0y2TneF3RH2?usp=sharing) を参考に実装を行う。
+管理サイドから実装するのがおすすめ。
+ブランチモデルは [GitHub Flow](https://tracpath.com/bootcamp/learning_git_github_flow.html) を利用する。
+ブランチ名は `topic/product_management_20200101` のようにする。
+PullRequestは機能単位(商品管理、商品カテゴリ管理...)とする。
+masterへのマージはGitHubでPullRequestを利用し、有識者のコードレビュー承認後にマージすること。
+# リファレンスなど
+[Spring](hhttps://spring.pleiades.io)
+[Java](https://kazurof.github.io/GoogleJavaStyle-ja/)
+[Bootstrap4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+[FontAwesome](https://fontawesome.com/)
+[Git](https://git-scm.com/book/ja/v2)
+[設計書の例](https://pm-rasinban.com/bd-write)
+[テスト設計書](https://docs.google.com/spreadsheets/d/1eAcfaLHgvd0X8Bomp7Be1qAVlkXLonyHEdmTw5qP91s/edit?usp=sharing)
