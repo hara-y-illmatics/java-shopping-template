@@ -138,6 +138,7 @@ cd shopping
 git remote set-url origin <URL>
 # Githubにローカルリポジトリをプッシュ
 git push origin master
+git config --global --add safe.directory c:/git/shopping
 ```
 
 ## 3. masterブランチのプロテクションルール設定
