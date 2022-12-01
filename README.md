@@ -80,7 +80,7 @@ Chocolatey GUI経由でOpenJDKをインストールした場合、
 ### Pleiades All in One Eclipse
 Java等の統合開発環境
 * [公式サイト](https://mergedoc.osdn.jp/)
-`Windows x64` `Full Edition` `Java`のダウンロードボタンをクリックしてダウンロードしてください。
+`Windows x64`  >  `Full Edition`  >  `Java`のダウンロードボタンをクリックしてダウンロードしてください。
 <!--
 メンター用備忘録
 Windows x64 Full Edition Javaの場合、LombokやSTSプラグインも導入されているため、
@@ -106,5 +106,18 @@ Also available for Windowsのリンクからインストーラをダウンロー
 git config --global user.name "yamada-t"
 git config --global user.email "yamada-t@company.co.jp"
 ```
+### Oracle 
+データベース管理システム
+ * [Oracle Database 21cダウンロードサイト](https://www.oracle.com/jp/database/technologies/xe-downloads.html)
+ * Oracle Database 21c Express Edition for Linux x64 ( OL7 )をダウンロードする。
+
+### Docker
+非常に軽量なコンテナ型のアプリケーション実行環境  
+* [Docker Desktop ダウンロードサイト](https://www.docker.com/products/docker-desktop/)
+* Download Docker Desktop Windowsのボタンをクリックしてダウンロードする。
+
+* 起動時にエラーが発生する場合、下記のサイトの通りにコマンド実行など実施する。
+https://learn.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+
 
 WIP
