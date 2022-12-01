@@ -111,10 +111,31 @@ Windows x64 Full Edition Javaの場合、LombokやSTSプラグインも導入さ
 ```base
 git config --global user.name "yamada-t"
 git config --global user.email "yamada-t@company.co.jp"
+```
 
 ### Oracle 
 データベース管理システム
  * [Oracle Database 21cダウンロードサイト](https://www.oracle.com/jp/database/technologies/xe-downloads.html)
  * Oracle Database 21c Express Edition for Linux x64 ( OL7 )をダウンロードする。
+
+
+## 2. 研修アプリの取得と作業用リポジトリへプッシュ
+研修アプリを取得した後、自分の作業用リポジトリへプッシュを行う。
+```bash
+# 研修用リポジトリをローカルにshoppingというディレクトリ名でクローン
+git clone https://github.com/hara-y-illmatics/java-shopping-template shopping
+# shoppingへ移動
+cd shopping
+# originの再設定
+# <URL> は作成した自分のリポジトリの "HTTPS" を使用する
+git remote set-url origin <URL>
+# Githubにローカルリポジトリをプッシュ
+git push origin master
+```
+
+## 3. masterブランチのプロテクションルール設定
+Githubでmasterへのマージをレビュー必須とする[設定](https://drive.google.com/drive/folders/1jwtMsaLBwvPpkmjvfqIdrkwqHWQXjq7k?usp=sharing)を行う。
+`.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
+## 4. ダウンロード済みのOracle XE の移動
 
 WIP
