@@ -124,6 +124,7 @@ git config --global user.email "yamada-t@company.co.jp"
 ```bash
 # 研修用リポジトリをローカルにshoppingというディレクトリ名でクローン
 git clone https://github.com/hara-y-illmatics/java-shopping-template shopping
+以下、c:\gitディレクトリにshoppingをクローンしたものとして説明する。
 # shoppingへ移動
 cd shopping
 # originの再設定
@@ -137,5 +138,24 @@ git push origin master
 Githubでmasterへのマージをレビュー必須とする[設定](https://drive.google.com/drive/folders/1jwtMsaLBwvPpkmjvfqIdrkwqHWQXjq7k?usp=sharing)を行う。
 `.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
 ## 4. ダウンロード済みのOracle XE の移動
+Oracle XEのインストーラー(拡張子rpmのファイル)を `C:\Users\(ユーザー名)\Downloads` フォルダにダウンロードした場合
+```
+mv C:\Users\(ユーザー名)\Downloads\oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm c:\git\shopping\docker\oracle\21.3.0\
+```
+
+## 5. dockerイメージのビルド
+```
+cd c:\git\shopping\docker\oracle
+.\buildContainerImage.sh -v 21.3.0 -x -i
+(別のコマンドプロンプトが開きビルドを実行、所要時間はPCの性能に依るが数分程度後、ビルド完了後に別プロンプトが閉じる)
+docker images
+```
+
+コマンドの実行結果で以下のように表示されていれば正常にビルドできている。
+```
+REPOSITORY        TAG         IMAGE ID       CREATED          SIZE
+oracle/database   21.3.0-xe   fe3040d18249   13 minutes ago   6.53GB
+```
+(IMAGE IDやCREATEDは異なる場合があります。)
 
 WIP
