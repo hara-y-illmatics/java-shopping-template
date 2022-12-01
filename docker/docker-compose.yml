@@ -2,7 +2,7 @@ version: '3'
 services:
   dbserver:
     build:
-      context: ./oracle/18.4.0/
+      context: ./oracle/21.3.0/
       dockerfile: Dockerfile.xe
     volumes:
       - ../data/database:/u01/app/oracle/oradata

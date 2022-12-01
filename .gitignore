@@ -1,8 +1,6 @@
 data/*
-docker/oracle/11.2.0.2/oracle-xe-11.2.0-1.0.x86_64.rpm.zip
-docker/oracle/18.4.0/oracle-database-xe-18c-1.0-1.x86_64.rpm
-docker/oracle-database-xe-18c-1.0-1.x86_64.rpm
-/.DS_Store
+*.rpm
+.DS_Store
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,eclipse,macos
