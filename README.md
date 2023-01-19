@@ -125,7 +125,7 @@ cd shopping
 # <URL> は作成した自分のリポジトリの "HTTPS" を使用する
 git remote set-url origin <URL>
 # Githubにローカルリポジトリをプッシュ
-git push origin master
+git push origin main
 git config --global --add safe.directory c:/git/shopping
 ```
 
@@ -186,12 +186,14 @@ TBD
 [http://localhost:8080](http://localhost:8080) にアクセスして画面が表示されれば完了。
 
 ## サービス起動/停止＋
-```bash
+<!--
 # ビルド
 ~/bin/clean-build.sh
 # 起動
 ~/bin/up.sh
-# 停止(未作成)
+-->
+```bash
+# DB停止
 Docker Desktopから停止する
 # DBアクセス
 ~/bin/sqlplus.sh
@@ -220,10 +222,10 @@ Docker Desktopから停止する
 PullRequestは機能単位(商品管理、商品カテゴリ管理...)とする。
 masterへのマージはGitHubでPullRequestを利用し、有識者のコードレビュー承認後にマージすること。
 # リファレンスなど
-[Spring](hhttps://spring.pleiades.io)
-[Java](https://kazurof.github.io/GoogleJavaStyle-ja/)
-[Bootstrap4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-[FontAwesome](https://fontawesome.com/)
-[Git](https://git-scm.com/book/ja/v2)
-[設計書の例](https://pm-rasinban.com/bd-write)
-[テスト設計書](https://docs.google.com/spreadsheets/d/1eAcfaLHgvd0X8Bomp7Be1qAVlkXLonyHEdmTw5qP91s/edit?usp=sharing)
+* [Spring](https://spring.pleiades.io)
+* [Java](https://kazurof.github.io/GoogleJavaStyle-ja/)
+* [Bootstrap4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+* [FontAwesome](https://fontawesome.com/)
+* [Git](https://git-scm.com/book/ja/v2)
+* [設計書の例](https://pm-rasinban.com/bd-write)
+* [テスト設計書](https://docs.google.com/spreadsheets/d/1eAcfaLHgvd0X8Bomp7Be1qAVlkXLonyHEdmTw5qP91s/edit?usp=sharing)
