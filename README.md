@@ -126,12 +126,13 @@ cd shopping
 git remote set-url origin <URL>
 # Githubにローカルリポジトリをプッシュ
 git push origin main
+# ローカルリポジトリを安全なディレクトリとして設定
 git config --global --add safe.directory c:/git/shopping
 ```
 
 
-## 3. masterブランチのプロテクションルール設定
-Githubでmasterへのマージをレビュー必須とする[設定](https://drive.google.com/drive/folders/1jwtMsaLBwvPpkmjvfqIdrkwqHWQXjq7k?usp=sharing)を行う。
+## 3. mainブランチのプロテクションルール設定
+Githubでmainへのマージをレビュー必須とする[設定](https://drive.google.com/drive/folders/1jwtMsaLBwvPpkmjvfqIdrkwqHWQXjq7k?usp=sharing)を行う。
 `.github/CODEOWNERS`に指定したGithubアカウントのレビュー承認を受けなければマージできなくなる。
 
 ## 4. ダウンロード済みのOracle XEの移動
