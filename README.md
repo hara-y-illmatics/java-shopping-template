@@ -1,3 +1,6 @@
+以下URLに成果物移動
+https://github.com/hara-y-illmatics/shopping-template-java-windows
+
 # セットアップ(Windows端末用)
 以下、管理者権限ユーザーで実施する。
 
